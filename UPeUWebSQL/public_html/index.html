@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/main.css">
+<!--fdf-->
+<style>
+  
+
+body{
+	background-color:#CCC;
+	color:#000305;
+	font-size:87.5%;
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:1.5;
+	text-align:left;
+}
+a{
+	text-decoration:none;
+}
+
+
+
+
+.topcontent{
+	background-color:#fff;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding:3% 5%;
+	margin-top:2%;
+	
+}
+.topcontent content img{
+	float: left;
+	width: 30%;
+	height:auto;
+	padding:10px 10px 10px 0;
+	border-radius: 25px;
+	-moz-border-radius:25px;
+	-webkit-border-radius:25px;
+}
+
+
+#nombre, #email, #telefono, #website, #project, #comments{
+	width: 100%;
+}
+#contactform{
+	margin-right:0;
+	text-align: left;
+}
+
+
+    
+    
+  </style>
+ <script src="jquery-1.6.3.min.js"></script>
+        <script type="text/javascript">
+             window.onload = function(e) {
+               buscarPersona("");
+            }; 
+            
+           
+            
+        </script>      
+    </head>
+    <body>
+        <div id="container"></div>
+        <article class="topcontent">
+        <header>
+                        <h2><a href="#" class="titulo">Formulario</a></h2>
+                    </header>
+                <content>
+                        <fieldset>
+                            <legend><font><font>Registro Persona</font></font></legend>
+                            <div>
+                                <table>
+                                    <form class="Form">
+                                    <tr>
+                                        <td>Nombre:</td> 
+                                        <td><input type="text" id="nombre" placeholder="Ingrese Nombre" ></td> 
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Apellidos:</td> 
+                                        <td><input type="text" id="apellidos" placeholder="Ingrese Apellidos"></td> 
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Dni:</td> 
+                                        <td><input type="text" id="dni" placeholder="Ingrese DNI" maxlength="8"></td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Telefono</td> 
+                                        <td><input id="telefono" type="text" placeholder="Ingrese Telefono" ></td>
+                                        <td><input id="idPersona" type="hidden" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fecha Nacimiento</td> 
+                                       <td> <input type="date"  id="fechan"  value=""  ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Genero:</td> 
+                                        <td>                                        
+                                            Masculino<input type="radio" id="genero" name="genero" value="1" checked="true" >
+                                            Femenino<input type="radio" id="genero" name="genero" value="2"> 
+                                        </td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Profesion</td> 
+                                        <td>
+                                            <select name="estudio" id="profesion">
+                                                <option value="1">Ing. Sistemas</option>
+                                                <option value="2">Ing. Civl</option>
+                                                <option value="3">Ing. Ambiental</option>
+                                            </select>
+                                        </td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Grado Estudio:</td> 
+                                        <td>
+                                            <select name="estudio" id="gradoEstudio">
+                                                Bachiller<input type="checkbox" name="grado" value="Bachiller" checked="true">
+                                                Magister<input type="checkbox" name="grado" value="Magister">
+                                                Doctorado <input type="checkbox" name="grado" value="Doctorado">
+                                                Postdoctorado<input type="checkbox" name="grado" value="Postdoctorado">
+                                            </select>
+                                        </td> 
+                                    </tr>
+                                    <tr>
+                                        <td>E-mail:</td> 
+                                        <td><input type="email"  id="email"  placeholder="Ingrese E-mail"  ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Usuario</td> 
+                                        <td><input type="text"  id="usuario"  placeholder="Ingrese Usuario"  > </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Clave:</td> 
+                                        <td><input type="password"  id="clave"  placeholder="Ingrese Clave"  ></td>
+                                    </tr>
+                                    <tr>
+                                     
+                                        <td colspan="2">
+                                            <input type="button" id="storeButton" onclick="location.href='buscar.html'" value="GUARDAR" >
+                                            <input type="button" value="Cancelar" >
+                                            <input type="reset" >
+                                        </td> 
+                                    </tr>
+                                   </table>                               
+                            </div>                            
+                        </fieldset>
+                        
+                    </content>
+            </article>
+
+  
+        <fieldset>
+      <legend><font><font>Buscar Persona:</font></font></legend>
+      <div>
+        <label for= "query"><font><font>Nombre: </font></font></label><input id="queryx" type="text" value="">
+      </div>
+      <div>
+        <label for= "query"><font><font>Dni: </font></font></label><input id="dnix" type="text" value="">
+      </div>
+      <input type="button" id="findButton" value="Buscar" >
+      
+      
+      <button id="nuevo"><font><font>Nuevo</font></font></button>
+    </fieldset>
+
+    <center>
+        <table id="TableData" border="1" style="width: 100%">
+        <thead style="background-color: buttonhighlight">
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>DNI</th>
+        <th>Telefono</th>
+        <th>Fecha Nacimiento</th> 
+        <th>Genero:</th> 
+        <th>Profesion</th>
+        <th>Grado Estudio:</th>
+        <th>E-mail:</th>
+        <th>Usuario</th>
+        <th>Clave:</th>
+        <th>Opciones</th>
+        </thead>
+        <tbody id="data">        
+        </tbody>
+    </table>
+  </center>
+    
+
+
+    <script type="text/javascript" async="" src="js/libs/ga.js"></script>
+    <script src="js/upeu.js"></script>
+
+   
+
+  <script src="js/libs/ga1.js"></script>
+       
+  </body>
+</html>
